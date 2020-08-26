@@ -21,18 +21,18 @@
 
 ## items テーブル
 
-| Column              | Type       | Options                        |
-| ------              | ------     | ------------------------------ |
-| image               | string     | null: false                    |
-| name                | string     | null: false                    |
-| info                | string     | null: false                    |
-| category            | string     | null: false                    |
-| items_status        | string     | null: false                    |
-| shipping_fee        | string     | null: false                    |
-| prefecture          | integer    | null: false                    |
-| scheduled_delivery  | string     | null: false                    |
-| price               | string     | null: false                    |
-| user                | references | null: false, foreign_key: true |
+| Column              | Type        | Options                        |
+| ------              | ------      | ------------------------------ |
+| image               | string      | null: false                    |
+| name                | string      | null: false                    |
+| info                | string      | null: false                    |
+| category            | integer     | null: false                    |
+| items_status        | integer     | null: false                    |
+| shipping_fee        | integer     | null: false                    |
+| prefecture          | integer     | null: false                    |
+| scheduled_delivery  | integer     | null: false                    |
+| price               | string      | null: false                    |
+| user                | references  | null: false, foreign_key: true |
 
 
 ### Association
@@ -50,7 +50,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :item
+- belongs_to :item
 - has_one :adress
 
 
@@ -58,8 +58,7 @@
 
 | Column         | Type       | Options                        |
 | -------        | ---------- | ------------------------------ |
-| order_id       | references | null: false  foreign_key: true                           |
-| card_number    | string     | null: false, foreign_key: true |
+| order          | references | null: false  foreign_key: true |
 | post_number    | string     | null: false                    |
 | prefecture     | integer    | null: false                    |
 | city           | string     | null: false                    |
@@ -69,6 +68,4 @@
 
 
 ### Association
-
-- belongs_to :room
 - has_one :order
