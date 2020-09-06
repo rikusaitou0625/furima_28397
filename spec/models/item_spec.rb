@@ -8,6 +8,9 @@ RSpec.describe Item, type: :model do
     end
 
     context '商品出品がうまくいくとき' do
+      it 'すべての条件を満たしている時' do
+      @item.valid?
+      expect(@item).to be_valid
     end
 
     context '商品出品がうまくいかないとき' do
