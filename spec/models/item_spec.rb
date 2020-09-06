@@ -9,8 +9,9 @@ RSpec.describe Item, type: :model do
 
     context '商品出品がうまくいくとき' do
       it 'すべての条件を満たしている時' do
-      @item.valid?
-      expect(@item).to be_valid
+        @item.valid?
+        expect(@item).to be_valid
+      end 
     end
 
     context '商品出品がうまくいかないとき' do
@@ -65,18 +66,18 @@ RSpec.describe Item, type: :model do
       it '価格の範囲が、¥299以下であれば出品できない' do
         @item.price = 200
         @item.valid?
-        expect(@item.errors.full_messages).to include("price can't be blank")
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
       it '価格の範囲が、¥9,999,999以上であれば出品できない' do
         @item.price = 10_000_000
         binding.pry
         @item.valid?
-        expect(@item.errors.full_messages).to include("price can't be blank")
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
       it '販売価格は半角数字のみでないと出品できない' do
         @item.price = '２０００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("price can't be blank")
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
     end
   end
