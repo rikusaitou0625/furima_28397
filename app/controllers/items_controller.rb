@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, only: [:new, :crate]
-  
+
+  def index
+    @items = Item.all.order("created_at DESC")
+  end
+
   def new
     @item = Item.new
   end
@@ -9,10 +13,10 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       redirect_to action: :index
-      
+
     else
       render :new
-      
+
     end
   end
 

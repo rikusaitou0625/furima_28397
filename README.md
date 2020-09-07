@@ -48,6 +48,7 @@
 | item         | references | null: false, foreign_key: true |
 
 ### Association
+item.order != nil
 
 - belongs_to :user
 - belongs_to :item
