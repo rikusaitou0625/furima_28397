@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, only: [:new, :crate]
   
+  def index
+    @items = Item.all
+  end
   def new
     @item = Item.new
   end
