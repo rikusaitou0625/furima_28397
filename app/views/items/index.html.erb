@@ -127,7 +127,7 @@
     <ul class='item-lists'>
 
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-      <%# <% @items.each do |item| %> %>
+      <%# <% @items.each do |item| %> 
       <li class='list'>
         <%= link_to "#" do %>
         <div class='item-img-content'>
@@ -162,7 +162,7 @@
           </div>
         </div>
         <% end %>
-         <% end %> 
+         
       </li>
       <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
 
@@ -194,8 +194,8 @@
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>出品する</span>
   
-    <%= link_to "出品する", new_item_path,class: 'btn'%>
+  <%= link_to new_item_path do %>
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-  </a>
+  <%end%>
 </div>
 <%= render "shared/footer" %>
