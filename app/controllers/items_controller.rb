@@ -39,10 +39,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.save
-    @item.destroy
-    redirect_to root_path
-    end
+    if @item.destroy
+      redirect_to root_path
+
+    else
+      render :edit
+  end
   end
 
   private
