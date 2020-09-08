@@ -8,6 +8,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_fee
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :scheduled_delively
+  belongs_to_active_hash :status
 
   # status_id
 
