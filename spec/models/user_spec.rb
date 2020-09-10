@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
       it 'nameとemail、passwordとpassword_confirmationが存在すれば登録できる' do
         expect(@user).to be_valid
       end
-      it 'nameが6文字以下で登録できる' do
+      it 'すべての条件を満たしている時' do
         @user.name = '田中太郎'
 
         expect(@user).to be_valid
