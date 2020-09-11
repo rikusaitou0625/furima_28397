@@ -70,7 +70,7 @@ RSpec.describe Item, type: :model do
       end
       it '価格の範囲が、¥9,999,999以上であれば出品できない' do
         @item.price = 10_000_000
-        binding.pry
+        
         @item.valid?
         expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
